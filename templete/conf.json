@@ -1,0 +1,35 @@
+{
+  "pages": [{
+    "key": "list_page",
+    "comments": [{
+      "key": "list",
+      "index": 0,
+      "type": "table",
+      "api": {
+        "url": "http://127.0.0.1:8090/hello",
+        "method": "post",
+        "api_type": "query",
+        "params": {
+          "checker": null,
+          "fields": [{
+            "name": "name",
+            "is_key": false,
+            "field_type": "string",
+            "is_required": false,
+            "is_show": true,
+            "checker": null
+          }, {
+            "name": "id",
+            "is_key": false,
+            "field_type": "int",
+            "is_required": false,
+            "is_show": true,
+            "checker": null
+          }]
+        },
+        "model": null
+      }
+    }]
+  }],
+  "version": "v1.0.0"
+}

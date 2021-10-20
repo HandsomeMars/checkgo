@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="searchText">
+    </div>
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+            </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        const tableData = [
+            {
+                name: 'jerry111',
+                age: 11
+            },
+            {
+                name: 'jerry22',
+                age: 22
+            },
+            {
+                name: 'jerry33',
+                age: 33
+            }
+        ]
+        let res = '';
+        for(let i = 0; i < tableData.length; i++){
+            res += `<tr>
+                        <td>${tableData[i].name}</td>
+                        <td>${tableData[i].age}</td>
+                    </tr>`
+        }
+        document.getElementById('tbody').innerHTML = res;
+    </script>
+</body>
+</html>

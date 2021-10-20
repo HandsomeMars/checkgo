@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form">
+    <input type="text" name="" value="" disabled="disabled">
+</form>
+<script>
+    let data = [
+        {
+            name: 'name',
+            value: 'bob',
+            type: 'string',
+            isRequired: true,
+        },
+        {
+            name: 'age',
+            value: 11,
+            type: 'int',
+            isRequired: false
+        },
+        {
+            name: 'time',
+            value: '2001-10-23 00:00:00',
+            type: 'time',
+            isRequired: true
+        },
+    ]
+    let res = '';
+    for(let i = 0; i < data.length; i++){
+        res += data[i].isRequired ? `<input type="text" name="${data[i].name}" value="${data[i].value}" disabled>` : `<input type="text" name="${data[i].name}" value="${data[i].value}">`
+    }
+    document.getElementById('form').innerHTML = res;
+</script>
+</body>
+</html>
