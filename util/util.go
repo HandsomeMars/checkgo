@@ -1,4 +1,4 @@
-package main
+package util
 
 import (
 	"bytes"
@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"net/http"
 )
-
 
 // ParseBodyParam 按json格式解析请求体body
 func ParseBodyParam(r *http.Request, param interface{}) error {
@@ -27,7 +26,7 @@ func ParseBodyParam(r *http.Request, param interface{}) error {
 // WrapResponse 将interface{}转为json写入http.ResponseWriter
 func WrapResponse(w http.ResponseWriter, data interface{}, httpCode int) {
 
-	result := map[string]interface{}{"data":data}
+	result := map[string]interface{}{"data": data}
 	jsonData, err := json.Marshal(result)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)

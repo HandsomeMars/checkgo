@@ -1,0 +1,192 @@
+{
+  "checkgo":"1.0",
+  "version":"v1.0.0",
+  "info":{
+    "description":"这是一个例子",
+    "version":"v1.0",
+    "title":"铜雀台规则生成"
+  },
+  "host":"127.0.0.1",
+  "activities":{
+    "THLB":{
+      "code":"THLB",
+      "name":"特惠礼包",
+      "version":"V1.0.1",
+      "comments":[
+        {
+          "name":"活动信息模板",
+          "code":"activity",
+          "vaildator":"empty",
+          "format":"text",
+          "type":"form",
+          "comments":[
+            {
+              "name":"活动应用",
+              "code":"name",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["亚瑟王-开发服"]
+            },
+            {
+              "name":"活动区服",
+              "code":"server",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["[开发一区,开发四区]"]
+            },
+            {
+              "name":"活动开始时间",
+              "code":"start_time",
+              "vaildator":"datetime",
+              "type":"string",
+              "format":"YYYY/MM/DD HH:Mi",
+              "example": ["2021/10/12 0:00"]
+            },
+            {
+              "name":"活动结束时间时间",
+              "code":"end_time",
+              "vaildator":"len>0,self>start_time",
+              "type":"string",
+              "format":"YYYY/MM/DD HH:Mi",
+              "example": ["2021/10/20 23:59"]
+            },
+            {
+              "name":"活动类型",
+              "code":"activity_type",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["特惠礼包"]
+            }
+          ]
+
+        },
+        {
+          "name":"礼包配置",
+          "code":"reward",
+          "vaildator":"empty",
+          "format":"text",
+          "type":"table",
+          "comments":[
+            {
+              "name":"礼包名称",
+              "code":"reward_name",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["铸造礼包","与火共舞礼包"]
+            },
+            {
+              "name":"礼包价格",
+              "code":"reward_value",
+              "vaildator":"value>0",
+              "type":"int",
+              "format":"text",
+              "example": [888,1088]
+            },
+            {
+              "name":"购买数量",
+              "code":"num",
+              "vaildator":"value>=0",
+              "type":"int",
+              "format":"text",
+              "example": [2,1]
+            },
+            {
+              "name":"vip等级",
+              "code":"vip_level",
+              "vaildator":"value>=0",
+              "type":"int",
+              "format":"text",
+              "example": [0,0]
+            },
+            {
+              "name":"奖励",
+              "code":"vip_level",
+              "vaildator":"len>=0",
+              "type":"array",
+              "format":"text",
+              "example": [["武器强化粉末*5","防具强化粉末*5","矿石*5"],["武器强化粉末*5","防具强化粉末*5","矿石*5"]]
+            }
+          ]
+        }
+      ]
+    },
+    "AYHW":{
+      "code":"AYHW",
+      "name":"暗影护卫",
+      "version":"V1.0.1",
+      "comments":[
+        {
+          "name":"活动信息模板",
+          "code":"activity",
+          "vaildator":"empty",
+          "format":"text",
+          "type":"form",
+          "comments":[
+            {
+              "name":"活动应用",
+              "code":"name",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["亚瑟王-开发服"]
+            },
+            {
+              "name":"活动区服",
+              "code":"server",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["[开发一区,开发四区]"]
+            },
+            {
+              "name":"活动开始时间",
+              "code":"start_time",
+              "vaildator":"datetime",
+              "type":"string",
+              "format":"YYYY/MM/DD HH:Mi",
+              "example": ["2021/10/12 0:00"]
+            },
+            {
+              "name":"活动结束时间时间",
+              "code":"end_time",
+              "vaildator":"len>0,self>start_time",
+              "type":"string",
+              "format":"YYYY/MM/DD HH:Mi",
+              "example": ["2021/10/20 23:59"]
+            },
+            {
+              "name":"活动类型",
+              "code":"activity_type",
+              "vaildator":"len>0",
+              "type":"string",
+              "format":"text",
+              "example": ["暗影护卫"]
+            }
+          ]
+
+        },
+        {
+          "name":"英雄配置",
+          "code":"hero",
+          "vaildator":"empty",
+          "format":"text",
+          "type":"table",
+          "comments":[
+            {
+              "name":"奖励",
+              "code":"vip_level",
+              "vaildator":"len>=0",
+              "type":"array",
+              "format":"text",
+              "example": ["玛赫","阿塔兰忒","希瓦"]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
