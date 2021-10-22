@@ -19,6 +19,9 @@ type Activity struct {
 	Name     string     `json:"name"`
 	Version  string     `json:"version"`
 	Comments []*Comment `json:"comments"`
+	Index    int        `json:"_"`
+	Row      int        `json:"_"`
+	Col      int        `json:"_"`
 }
 
 type Comment struct {
@@ -26,9 +29,24 @@ type Comment struct {
 	Code      string      `json:"code"`
 	Validator string      `json:"validator"`
 	Format    string      `json:"format"`
+	Layout    layoutType  `json:"layout"`
 	Type      commentType `json:"type"`
-	Comments  []*Comment  `json:"comments"`
+	Filed     []*Filed    `json:"fileds"`
+	Index     int         `json:"_"`
+	Row       int         `json:"_"`
+	Col       int         `json:"_"`
+}
+
+type Filed struct {
+	Name      string      `json:"name"`
+	Code      string      `json:"code"`
+	Validator string      `json:"validator"`
+	Format    string      `json:"format"`
+	Type      fieldType   `json:"type"`
 	Example   interface{} `json:"example"`
+	Index     int         `json:"_"`
+	Row       int         `json:"_"`
+	Col       int         `json:"_"`
 }
 
 func (c *Conf) check() error {

@@ -1,12 +1,22 @@
 package conf
 
 type commentType string
+type fieldType string
+type layoutType string
 
 const (
-	Form   commentType = "form"
-	Table  commentType = "table"
-	String commentType = "string"
-	Int    commentType = "int"
-	Float  commentType = "float"
-	Array  commentType = "array"
+	Form  commentType = "form"
+	Table commentType = "table"
+)
+
+const (
+	Horizontal layoutType = "horizontal"
+	Vertical   layoutType = "vertical"
+)
+
+const (
+	String fieldType = "string"
+	Int    fieldType = "int"
+	Float  fieldType = "float"
+	Array  fieldType = "array"
 )

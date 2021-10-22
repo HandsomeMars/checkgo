@@ -3,7 +3,6 @@ package generator
 import (
 	"bytes"
 	"checkgo/conf"
-	"errors"
 	"fmt"
 	"github.com/xuri/excelize/v2"
 	"log"
@@ -13,14 +12,7 @@ import (
 
 func init() {
 	http.HandleFunc("/generator/xls", GeneratorXlsHandler)
-}
-
-type sheet struct {
-	sheet string
-	row   int
-	col   int
-	drow  int
-	dcol  int
+	http.HandleFunc("/generator/import", ImportXlsHandler)
 }
 
 // GeneratorXlsHandler  导出xls模板
@@ -42,6 +34,11 @@ func GeneratorXlsHandler(w http.ResponseWriter, r *http.Request) {
 	xls.WriteTo(w)
 }
 
+// ImportXlsHandler  导入xls模板
+func ImportXlsHandler(w http.ResponseWriter, r *http.Request) {
+
+}
+
 func generatorXls() (*excelize.File, error) {
 
 	activitys, err := conf.GetChecker().GetAllActivity()
@@ -51,19 +48,13 @@ func generatorXls() (*excelize.File, error) {
 
 	xlsx := excelize.NewFile()
 	for _, activity := range activitys {
-		sheet := &sheet{
-			sheet: activity.Name,
-			row:   1,
-			col:   1,
-			drow:  1,
-			dcol:  1,
-		}
 		// Create a new sheet.
 		index := xlsx.NewSheet(activity.Name)
+		row, col := 0, 1
 		xlsx.SetActiveSheet(index)
 		// Set value of a cell.
 		for _, comment := range activity.Comments {
-			if handleComment(xlsx, sheet, comment); err != nil {
+			if _, row, err = writeComment(xlsx, activity.Name, col, row+1, comment); err != nil {
 				return xlsx, err
 			}
 		}
@@ -77,166 +68,146 @@ func generatorXls() (*excelize.File, error) {
 	return xlsx, nil
 }
 
-//handleComment 处理组件
-func handleComment(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
-	switch comment.Type {
-	case conf.Table:
-		if err := handleTableComment(xlsx, sheet, comment); err != nil {
-			return err
-		}
-	case conf.Form:
-		if err := handleFormComment(xlsx, sheet, comment); err != nil {
-			return err
-		}
-	default:
-		return errors.New("未知类型" + string(comment.Type))
-	}
-	return nil
-}
-
-func handleTableComment(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
-
-	//组件起始位置
-	currentRow := sheet.row
-	currentCol := sheet.col
-	//currentDRow := sheet.drow
-	//currentDCol := sheet.dcol
-
-	index, err := excelize.CoordinatesToCellName(currentCol, currentRow)
+func write(xlsx *excelize.File, sheet string, col, row int, data interface{}) error {
+	log.Println(sheet, data, row, col)
+	index, err := excelize.CoordinatesToCellName(col, row)
 	if err != nil {
 		return err
 	}
-
-	//写表头
-	xlsx.SetCellValue(sheet.sheet, index, comment.Name)
-	sheet.row = sheet.row + 1
-
-	//写子组件
-	for _, comment := range comment.Comments {
-		//子组件表头
-		index, err := excelize.CoordinatesToCellName(sheet.col, sheet.row)
-		if err != nil {
-			return err
-		}
-		xlsx.SetCellValue(sheet.sheet, index, comment.Name)
-		sheet.col = sheet.col + 1
-		sheet.row = sheet.row + 1
-		//子组件模板数据
-		if err := handleCommentValue(xlsx, sheet, comment); err != nil {
-			return err
-		}
-		sheet.row = sheet.row - 1
-	}
-	//归位另起一行
-	sheet.col = currentCol
-	sheet.row = sheet.drow + 1
-
+	xlsx.SetCellValue(sheet, index, data)
 	return nil
 }
 
-func handleFormComment(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
+func writeComment(xlsx *excelize.File, sheet string, col, row int, comment *conf.Comment) (int, int, error) {
 
-	//组件起始位置
-	currentRow := sheet.row
-	currentCol := sheet.col
-
-	index, err := excelize.CoordinatesToCellName(currentCol, currentRow)
+	//写表头
+	err := write(xlsx, sheet, col, row, comment.Name)
 	if err != nil {
-		return err
+		return col, row, err
 	}
-
-	//写表头
-	xlsx.SetCellValue(sheet.sheet, index, comment.Name)
-	sheet.row = sheet.row + 1
-
-	//写子组件
-	for _, comment := range comment.Comments {
-		index, err := excelize.CoordinatesToCellName(sheet.col, sheet.row)
-		if err != nil {
-			return err
-		}
-		xlsx.SetCellValue(sheet.sheet, index, comment.Name)
-		sheet.row = sheet.row + 1
-
-		sheet.row = sheet.col + 1
-		//子组件模板数据
-		if err := handleCommentValue(xlsx, sheet, comment); err != nil {
-			return err
-		}
-		sheet.row = sheet.col - 1
-	}
-
-	//归位另起一行
-	sheet.col = currentCol
-	sheet.row = sheet.drow + 1
-	return nil
-}
-
-func handleCommentValue(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
-	switch comment.Type {
-	case conf.Array:
-		if err := handleArray(xlsx, sheet, comment); err != nil {
-			return err
-		}
-	case conf.String:
-		if err := handleString(xlsx, sheet, comment); err != nil {
-			return err
-		}
-	default:
-		return errors.New("未知类型" + string(comment.Type))
-	}
-	return nil
-}
-
-func handleArray(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
 
 	//组件起始位置
-	sheet.drow = sheet.row
-	sheet.dcol = sheet.col
+	//indexRow := row + 1
+	//indexCol := col
+	currentRow := row + 1
+	currentCol := col
+	maxRow := currentRow
+	maxCol := currentCol
 
-	//currentRow := sheet.row
-	currentCol := sheet.col
-
-	//写表头
-	rows := make([][]interface{}, 0)
-	if comment.Example != nil {
-		rows = comment.Example.([][]interface{})
+	r, l := 0, 0
+	if comment.Layout == conf.Vertical {
+		r = 1
+	} else {
+		l = 1
 	}
-	for _, cols := range rows {
-		sheet.drow = sheet.drow + 1
-		for _, data := range cols {
-			sheet.dcol = sheet.dcol + 1
-			index, err := excelize.CoordinatesToCellName(sheet.dcol, sheet.drow)
-			if err != nil {
-				return err
+
+	//写字段
+	for _, filed := range comment.Filed {
+		err := write(xlsx, sheet, currentCol, currentRow, filed.Name)
+		if err != nil {
+			return currentCol, currentRow, err
+		}
+
+		var rows []interface{}
+		if filed.Example != nil {
+			rows = filed.Example.([]interface{})
+		}
+
+		for ri, cols := range rows {
+			if filed.Type == conf.Array {
+				array := cols.([]interface{})
+				for li, data := range array {
+					if currentCol+li+l > maxCol {
+						maxCol = currentCol + li
+					}
+					err := write(xlsx, sheet, currentCol+li+l, currentRow+ri+r, data)
+					if err != nil {
+						return currentCol, currentRow, err
+					}
+				}
+			} else {
+				err := write(xlsx, sheet, currentCol+l, currentRow+ri+r, cols)
+				if err != nil {
+					return currentCol, currentRow, err
+				}
 			}
-			xlsx.SetCellValue(sheet.sheet, index, data)
 		}
-		sheet.dcol = currentCol
-	}
 
-	return nil
-}
-
-func handleString(xlsx *excelize.File, sheet *sheet, comment *conf.Comment) error {
-
-	//组件起始位置
-	sheet.drow = sheet.row
-	sheet.dcol = sheet.col
-
-	//写表头
-	rows := make([]interface{}, 0)
-	if comment.Example != nil {
-		rows = comment.Example.([]interface{})
-	}
-	for _, data := range rows {
-		sheet.drow = sheet.drow + 1
-		index, err := excelize.CoordinatesToCellName(sheet.dcol, sheet.drow)
-		if err != nil {
-			return err
+		currentCol += r
+		if currentCol > maxCol {
+			maxCol = currentCol
 		}
-		xlsx.SetCellValue(sheet.sheet, index, data)
+
+		currentRow += l
+		if currentRow > maxRow {
+			maxRow = currentRow
+		}
+
+		//if comment.Layout == conf.Vertical {
+		//	//水平迁移
+		//	currentCol += 1
+		//	if currentCol > maxCol {
+		//		maxCol = currentCol
+		//	}
+		//} else {
+		//	//垂直迁移
+		//	currentRow += 1
+		//	if currentRow > maxRow {
+		//		maxRow = currentRow
+		//	}
+		//}
 	}
 
-	return nil
+	////指针归位
+	//if comment.Layout == conf.Vertical {
+	//	currentCol = indexCol
+	//	currentRow += 1
+	//} else {
+	//	currentRow = indexRow
+	//	currentCol += 1
+	//}
+
+	////写子模板数据
+	//for _, filed := range comment.Filed {
+	//	var rows []interface{}
+	//	if filed.Example != nil {
+	//		rows = filed.Example.([]interface{})
+	//	}
+	//
+	//	for r, cols := range rows {
+	//		if filed.Type == conf.Array {
+	//			array := cols.([]interface{})
+	//			for l, data := range array {
+	//				if currentCol+l > maxCol {
+	//					maxCol = currentCol + l
+	//				}
+	//				err := write(xlsx, sheet, currentCol+l, currentRow+r, data)
+	//				if err != nil {
+	//					return currentCol, currentRow, err
+	//				}
+	//			}
+	//		} else {
+	//			err := write(xlsx, sheet, currentCol, currentRow+r, cols)
+	//			if err != nil {
+	//				return currentCol, currentRow, err
+	//			}
+	//		}
+	//	}
+	//
+	//	if comment.Layout == conf.Vertical {
+	//		//水平迁移
+	//		currentCol += 1
+	//		if currentCol > maxCol {
+	//			maxCol = currentCol
+	//		}
+	//	} else {
+	//		//垂直迁移
+	//		currentRow += 1
+	//		if currentRow > maxRow {
+	//			maxRow = currentRow
+	//		}
+	//	}
+	//}
+
+	return maxCol, maxRow, nil
 }

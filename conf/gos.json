@@ -18,8 +18,9 @@
           "code":"activity",
           "vaildator":"empty",
           "format":"text",
+          "layout": "horizontal",
           "type":"form",
-          "comments":[
+          "fileds":[
             {
               "name":"活动应用",
               "code":"name",
@@ -67,9 +68,10 @@
           "name":"礼包配置",
           "code":"reward",
           "vaildator":"empty",
+          "layout": "vertical",
           "format":"text",
           "type":"table",
-          "comments":[
+          "fileds":[
             {
               "name":"礼包名称",
               "code":"reward_name",
@@ -123,9 +125,10 @@
           "name":"活动信息模板",
           "code":"activity",
           "vaildator":"empty",
+          "layout": "horizontal",
           "format":"text",
           "type":"form",
-          "comments":[
+          "fileds":[
             {
               "name":"活动应用",
               "code":"name",
@@ -173,16 +176,17 @@
           "name":"英雄配置",
           "code":"hero",
           "vaildator":"empty",
+          "layout": "vertical",
           "format":"text",
           "type":"table",
-          "comments":[
+          "fileds":[
             {
               "name":"奖励",
               "code":"vip_level",
               "vaildator":"len>=0",
               "type":"array",
               "format":"text",
-              "example": ["玛赫","阿塔兰忒","希瓦"]
+              "example": [["玛赫"],["阿塔兰忒"],["希瓦"]]
             }
           ]
         }
