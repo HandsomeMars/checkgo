@@ -1,0 +1,2484 @@
+Index: templete/conf.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"pages\": [{\r\n    \"key\": \"list_page\",\r\n    \"comments\": [{\r\n      \"key\": \"list\",\r\n      \"index\": 0,\r\n      \"type\": \"table\",\r\n      \"api\": {\r\n        \"url\": \"http://127.0.0.1:8090/hello\",\r\n        \"method\": \"post\",\r\n        \"api_type\": \"query\",\r\n        \"params\": {\r\n          \"checker\": null,\r\n          \"fields\": [{\r\n            \"name\": \"name\",\r\n            \"is_key\": false,\r\n            \"field_type\": \"string\",\r\n            \"is_required\": false,\r\n            \"is_show\": true,\r\n            \"checker\": null\r\n          }, {\r\n            \"name\": \"id\",\r\n            \"is_key\": false,\r\n            \"field_type\": \"int\",\r\n            \"is_required\": false,\r\n            \"is_show\": true,\r\n            \"checker\": null\r\n          }]\r\n        },\r\n        \"model\": null\r\n      }\r\n    }]\r\n  }],\r\n  \"version\": \"v1.0.0\"\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templete/conf.json b/templete/conf.json
+--- a/templete/conf.json	(revision ee03d7a735090827b2af3d621d86b0bd848b2ee6)
++++ b/templete/conf.json	(date 1634701623933)
+@@ -1,35 +1,1016 @@
+ {
+-  "pages": [{
+-    "key": "list_page",
+-    "comments": [{
+-      "key": "list",
+-      "index": 0,
+-      "type": "table",
+-      "api": {
+-        "url": "http://127.0.0.1:8090/hello",
+-        "method": "post",
+-        "api_type": "query",
+-        "params": {
+-          "checker": null,
+-          "fields": [{
+-            "name": "name",
+-            "is_key": false,
+-            "field_type": "string",
+-            "is_required": false,
+-            "is_show": true,
+-            "checker": null
+-          }, {
+-            "name": "id",
+-            "is_key": false,
+-            "field_type": "int",
+-            "is_required": false,
+-            "is_show": true,
+-            "checker": null
+-          }]
++  "checkgo":"1.0",
++  "version":"v1.0.0",
++  "info":{
++    "description":"这是一个例子",
++    "version":"v1.0",
++    "title":"铜雀台规则生成"
++  },
++  "host":"127.0.0.1",
++  "activities":{
++    "activity_0":{
++      "description":"activity_0Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_1":{
++      "description":"activity_1Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_2":{
++      "description":"activity_2Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
+         },
+-        "model": null
+-      }
+-    }]
+-  }],
+-  "version": "v1.0.0"
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_3":{
++      "description":"activity_3Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    }
++  }
+ }
+\ No newline at end of file
+Index: main.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main\r\n\r\nimport (\r\n\t\"log\"\r\n\t\"net/http\"\r\n)\r\n\r\nconst (\r\n\tdefaultWebHostStr = \"127.0.0.1:8090\"\r\n\tdefaultWebPrefixStr = \"/\"\r\n\tdefaultWebStaticDir = \"./static/\"\r\n\r\n)\r\n\r\n\r\nfunc main() {\r\n\thttp.Handle(defaultWebPrefixStr, http.StripPrefix(defaultWebPrefixStr, http.FileServer(http.Dir(defaultWebStaticDir))))\r\n\tif err:=http.ListenAndServe(defaultWebHostStr, nil);err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.go b/main.go
+--- a/main.go	(revision ee03d7a735090827b2af3d621d86b0bd848b2ee6)
++++ b/main.go	(date 1634701623912)
+@@ -6,16 +6,15 @@
+ )
+ 
+ const (
+-	defaultWebHostStr = "127.0.0.1:8090"
++	defaultWebHostStr   = "127.0.0.1:8090"
+ 	defaultWebPrefixStr = "/"
+ 	defaultWebStaticDir = "./static/"
+-
+ )
+ 
+ 
+ func main() {
+ 	http.Handle(defaultWebPrefixStr, http.StripPrefix(defaultWebPrefixStr, http.FileServer(http.Dir(defaultWebStaticDir))))
+-	if err:=http.ListenAndServe(defaultWebHostStr, nil);err != nil {
++	if err := http.ListenAndServe(defaultWebHostStr, nil); err != nil {
+ 		log.Fatal(err)
+ 	}
+ }
+Index: util.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main\r\n\r\nimport (\r\n\t\"bytes\"\r\n\t\"encoding/json\"\r\n\t\"io/ioutil\"\r\n\t\"net/http\"\r\n)\r\n\r\n\r\n// ParseBodyParam 按json格式解析请求体body\r\nfunc ParseBodyParam(r *http.Request, param interface{}) error {\r\n\tbody, err := ioutil.ReadAll(r.Body)\r\n\tif err != nil {\r\n\t\treturn err\r\n\t}\r\n\t// Reset resp.body so it can be use again\r\n\tr.Body = ioutil.NopCloser(bytes.NewBuffer(body))\r\n\r\n\terr = json.Unmarshal(body, param)\r\n\tif err != nil {\r\n\t\treturn err\r\n\t}\r\n\treturn nil\r\n}\r\n\r\n// WrapResponse 将interface{}转为json写入http.ResponseWriter\r\nfunc WrapResponse(w http.ResponseWriter, data interface{}, httpCode int) {\r\n\r\n\tresult := map[string]interface{}{\"data\":data}\r\n\tjsonData, err := json.Marshal(result)\r\n\tif err != nil {\r\n\t\tw.WriteHeader(http.StatusInternalServerError)\r\n\t\tw.Write([]byte(err.Error()))\r\n\t\treturn\r\n\t}\r\n\tw.Header().Set(\"Content-Type\", \"application/json\")\r\n\tw.WriteHeader(httpCode)\r\n\tw.Write(jsonData)\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/util.go b/util.go
+--- a/util.go	(revision ee03d7a735090827b2af3d621d86b0bd848b2ee6)
++++ b/util.go	(date 1634695214116)
+@@ -7,7 +7,6 @@
+ 	"net/http"
+ )
+ 
+-
+ // ParseBodyParam 按json格式解析请求体body
+ func ParseBodyParam(r *http.Request, param interface{}) error {
+ 	body, err := ioutil.ReadAll(r.Body)
+@@ -27,7 +26,7 @@
+ // WrapResponse 将interface{}转为json写入http.ResponseWriter
+ func WrapResponse(w http.ResponseWriter, data interface{}, httpCode int) {
+ 
+-	result := map[string]interface{}{"data":data}
++	result := map[string]interface{}{"data": data}
+ 	jsonData, err := json.Marshal(result)
+ 	if err != nil {
+ 		w.WriteHeader(http.StatusInternalServerError)
+Index: api.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main\r\n\r\nimport (\r\n\t\"net/http\"\r\n)\r\n\r\nvar jsonConf *JsonConf\r\n\r\nfunc init() {\r\n\thttp.HandleFunc(\"/json/save\", SaveJsonHandler)\r\n\thttp.HandleFunc(\"/json/get\", GetJsonHandler)\r\n}\r\n\r\n// SaveJsonHandler  保存配置\r\nfunc SaveJsonHandler(w http.ResponseWriter, r *http.Request) {\r\n\tvar queryParams JsonConf\r\n\terr := ParseBodyParam(r, &queryParams)\r\n\tif err != nil {\r\n\t\tWrapResponse(w,nil,http.StatusBadRequest)\r\n\t}\r\n\tjsonConf = &queryParams\r\n\tWrapResponse(w,jsonConf,http.StatusOK)\r\n}\r\n\r\n// GetJsonHandler  获取配置\r\nfunc GetJsonHandler(w http.ResponseWriter, r *http.Request) {\r\n\tWrapResponse(w,jsonConf,http.StatusOK)\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/api.go b/api.go
+--- a/api.go	(revision ee03d7a735090827b2af3d621d86b0bd848b2ee6)
++++ b/api.go	(date 1634701623925)
+@@ -4,7 +4,7 @@
+ 	"net/http"
+ )
+ 
+-var jsonConf *JsonConf
++var jsonConf *Conf
+ 
+ func init() {
+ 	http.HandleFunc("/json/save", SaveJsonHandler)
+@@ -13,18 +13,18 @@
+ 
+ // SaveJsonHandler  保存配置
+ func SaveJsonHandler(w http.ResponseWriter, r *http.Request) {
+-	var queryParams JsonConf
++	var queryParams Conf
+ 	err := ParseBodyParam(r, &queryParams)
+ 	if err != nil {
+-		WrapResponse(w,nil,http.StatusBadRequest)
++		WrapResponse(w, nil, http.StatusBadRequest)
+ 	}
+ 	jsonConf = &queryParams
+-	WrapResponse(w,jsonConf,http.StatusOK)
++	WrapResponse(w, jsonConf, http.StatusOK)
+ }
+ 
+ // GetJsonHandler  获取配置
+ func GetJsonHandler(w http.ResponseWriter, r *http.Request) {
+-	WrapResponse(w,jsonConf,http.StatusOK)
++	WrapResponse(w, jsonConf, http.StatusOK)
+ }
+ 
+ 
+Index: model.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main\r\n\r\ntype JsonConf struct {\r\n\tPages   []*Page `json:\"pages\"`\r\n\tVersion string   `json:\"version\"`\r\n}\r\n\r\ntype Page struct {\r\n\tKey      string     `json:\"key\"`\r\n\tComments []*Comment `json:\"comments\"`\r\n}\r\n\r\ntype Comment struct {\r\n\tKey   string `json:\"key\"`\r\n\tIndex int    `json:\"index\"`\r\n\tType  string `json:\"type\"`\r\n\tApi   *Api   `json:\"api\"`\r\n}\r\n\r\ntype Api struct {\r\n\tUrl     string `json:\"url\"`\r\n\tMethod  string `json:\"method\"`\r\n\tApiType string `json:\"api_type\"`\r\n\tParams  *Model `json:\"params\"`\r\n\tResult  *Model `json:\"model\"`\r\n}\r\n\r\ntype Model struct {\r\n\tChecker []string `json:\"checker\"`\r\n\tFields  []*Field `json:\"fields\"`\r\n}\r\n\r\ntype Field struct {\r\n\tName       string   `json:\"name\"`\r\n\tFieldType  string      `json:\"field_type\"`\r\n\tValue      interface{} `json:\"value\"`\r\n\tIsKey      bool        `json:\"is_key\"`\r\n\tIsRequired bool     `json:\"is_required\"`\r\n\tIsShow     bool     `json:\"is_show\"`\r\n\tChecker    []string `json:\"checker\"`\r\n}\r\n\r\n//func main() {\r\n//\tjsonconf := JsonConf{\r\n//\t\tPages:   []*Page{&Page{\r\n//\t\t\tKey:      \"list_page\",\r\n//\t\t\tComments: []*Comment{&Comment{\r\n//\t\t\t\tKey:   \"list\",\r\n//\t\t\t\tIndex: 0,\r\n//\t\t\t\tType:  \"table\",\r\n//\t\t\t\tApi:   &Api{\r\n//\t\t\t\t\tUrl:     \"http://127.0.0.1:8090/hello\",\r\n//\t\t\t\t\tMethod:  \"post\",\r\n//\t\t\t\t\tApiType: \"query\",\r\n//\t\t\t\t\tParams:  &Model{\r\n//\t\t\t\t\t\tChecker: nil,\r\n//\t\t\t\t\t\tFields:  []*Field{\r\n//\t\t\t\t\t\t\t&Field{\r\n//\t\t\t\t\t\t\t\tName:       \"name\",\r\n//\t\t\t\t\t\t\t\tIsKey:      false,\r\n//\t\t\t\t\t\t\t\tFieldType:  \"string\",\r\n//\t\t\t\t\t\t\t\tIsRequired: false,\r\n//\t\t\t\t\t\t\t\tIsShow:     true,\r\n//\t\t\t\t\t\t\t\tChecker:    nil,\r\n//\t\t\t\t\t\t\t},\r\n//\t\t\t\t\t\t\t&Field{\r\n//\t\t\t\t\t\t\t\tName:       \"id\",\r\n//\t\t\t\t\t\t\t\tIsKey:      false,\r\n//\t\t\t\t\t\t\t\tFieldType:  \"int\",\r\n//\t\t\t\t\t\t\t\tIsRequired: false,\r\n//\t\t\t\t\t\t\t\tIsShow:     true,\r\n//\t\t\t\t\t\t\t\tChecker:    nil,\r\n//\t\t\t\t\t\t\t},\r\n//\t\t\t\t\t\t},\r\n//\t\t\t\t\t},\r\n//\t\t\t\t\tResult:  nil,\r\n//\t\t\t\t},\r\n//\t\t\t}},\r\n//\t\t}},\r\n//\t\tVersion: \"v1.0.0\",\r\n//\t}\r\n//\tdata,err:=json.Marshal(jsonconf);\r\n//\tif err!=nil{\r\n//\t\tlog.Fatal(err)\r\n//\t}\r\n//\tlog.Print(string(data))\r\n//}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/model.go b/model.go
+--- a/model.go	(revision ee03d7a735090827b2af3d621d86b0bd848b2ee6)
++++ b/model.go	(date 1634700385004)
+@@ -1,87 +1,144 @@
+ package main
+ 
+-type JsonConf struct {
+-	Pages   []*Page `json:"pages"`
+-	Version string   `json:"version"`
++import (
++	"encoding/json"
++	"math/rand"
++	"strconv"
++)
++
++type Info struct {
++	Description string `json:"description"`
++	Version     string `json:"version"`
++	Title       string `json:"title"`
+ }
+ 
+-type Page struct {
+-	Key      string     `json:"key"`
+-	Comments []*Comment `json:"comments"`
++type Conf struct {
++	Checkgo    string               `json:"checkgo"`
++	Version    string               `json:"version"`
++	Info       *Info                `json:"info"`
++	Host       string               `json:"host"`
++	Activities map[string]*Activity `json:"activities"`
+ }
+ 
+-type Comment struct {
+-	Key   string `json:"key"`
+-	Index int    `json:"index"`
+-	Type  string `json:"type"`
+-	Api   *Api   `json:"api"`
+-}
++type Field struct {
++	Name     string `json:"name"`
++	Type     string `json:"type"`
++	Required bool   `json:"required"`
++	Checker  string `json:"checker"`
+ 
+-type Api struct {
+-	Url     string `json:"url"`
+-	Method  string `json:"method"`
+-	ApiType string `json:"api_type"`
+-	Params  *Model `json:"params"`
+-	Result  *Model `json:"model"`
++	Ref string `json:"ref"`
+ }
+ 
+ type Model struct {
+-	Checker []string `json:"checker"`
+-	Fields  []*Field `json:"fields"`
++	Description string   `json:"description"`
++	Checker     string   `json:"checker"`
++	Required    []string `json:"required"`
++	Fields      []*Field `json:"fields"`
+ }
+ 
+-type Field struct {
+-	Name       string   `json:"name"`
+-	FieldType  string      `json:"field_type"`
+-	Value      interface{} `json:"value"`
+-	IsKey      bool        `json:"is_key"`
+-	IsRequired bool     `json:"is_required"`
+-	IsShow     bool     `json:"is_show"`
+-	Checker    []string `json:"checker"`
++type Comment struct {
++	Description string          `json:"description"`
++	Type        string          `json:"type"`
++	API         map[string]*API `json:"api"`
+ }
++
++type Activity struct {
++	Description string            `json:"description"`
++	Comments    []*Comment        `json:"comments"`
++	Models      map[string]*Model `json:"models"`
++}
++
++type API struct {
++	Description string `json:"description"`
++	URL         string `json:"url"`
++	Method      string `json:"method"`
++	In          *Model `json:"in"`
++	InRef       string `json:"in_ref"`
++	Out         *Model `json:"out"`
++	OutRef      string `json:"out_ref"`
++}
++
++func MockConf() *Conf {
++	conf := &Conf{}
++	conf.Activities=make(map[string]*Activity)
++	conf.Info=&Info{
++		Description: "这是一个例子",
++		Version:     "v1.0",
++		Title:       "铜雀台规则生成",
++	}
++	conf.Host = "127.0.0.1"
++	conf.Checkgo = "1.0"
++	conf.Version = "v1.0.0"
++
++	fields:=make([]*Field,0)
++	for i := 0; i <= 10; i++ {
++		field:=&Field{
++			Name:     "Name"+strconv.Itoa(i),
++			Type:     "Type"+strconv.Itoa(i),
++			Required: i%2==0,
++			Checker:  "",
++			Ref:      "",
++		}
++		fields = append(fields, field)
++	}
+ 
+-//func main() {
+-//	jsonconf := JsonConf{
+-//		Pages:   []*Page{&Page{
+-//			Key:      "list_page",
+-//			Comments: []*Comment{&Comment{
+-//				Key:   "list",
+-//				Index: 0,
+-//				Type:  "table",
+-//				Api:   &Api{
+-//					Url:     "http://127.0.0.1:8090/hello",
+-//					Method:  "post",
+-//					ApiType: "query",
+-//					Params:  &Model{
+-//						Checker: nil,
+-//						Fields:  []*Field{
+-//							&Field{
+-//								Name:       "name",
+-//								IsKey:      false,
+-//								FieldType:  "string",
+-//								IsRequired: false,
+-//								IsShow:     true,
+-//								Checker:    nil,
+-//							},
+-//							&Field{
+-//								Name:       "id",
+-//								IsKey:      false,
+-//								FieldType:  "int",
+-//								IsRequired: false,
+-//								IsShow:     true,
+-//								Checker:    nil,
+-//							},
+-//						},
+-//					},
+-//					Result:  nil,
+-//				},
+-//			}},
+-//		}},
+-//		Version: "v1.0.0",
+-//	}
+-//	data,err:=json.Marshal(jsonconf);
+-//	if err!=nil{
+-//		log.Fatal(err)
+-//	}
+-//	log.Print(string(data))
+-//}
+\ No newline at end of file
++	models:=make([]*Model,0)
++	modelm:=make(map[string]*Model,0)
++	for i := 0; i <= 3; i++ {
++		model:=&Model{
++			Description: "model_"+strconv.Itoa(i)+"Description",
++			Checker:     "",
++			Required:    make([]string,0),
++			Fields:      make([]*Field,0),
++		}
++		index := rand.Intn(i+1)
++		model.Required = append(model.Required, fields[index].Name)
++		model.Fields = append(model.Fields,fields[index])
++		models = append(models, model)
++		modelm["model_"+strconv.Itoa(i)]=model
++	}
++
++	apis:=make([]*API,0)
++	for i := 0; i <= 3; i++ {
++		api:=&API{
++			Description: "api_" + strconv.Itoa(i) + "Description",
++			URL:         "http://127.0.0.1/api/"+ strconv.Itoa(i),
++			Method:      "POST",
++			In:          models[rand.Intn(i+1)],
++			InRef:       "",
++			Out:         models[rand.Intn(i+1)],
++			OutRef:      "",
++		}
++		apis = append(apis, api)
++	}
++
++	comments :=make([]*Comment,0)
++	for i := 0; i <= 3; i++ {
++		commet:=&Comment{
++			Description: "commet_" + strconv.Itoa(i) + "Description",
++			Type:        "",
++			API:         make(map[string]*API,0),
++		}
++		commet.Type = []string{"table","query"}[i%2]
++		commet.API["api"+strconv.Itoa(i)]=apis[rand.Intn(i+1)]
++		comments = append(comments, commet)
++	}
++
++	for i := 0; i <= 3; i++ {
++		activity := &Activity{
++			Description: "activity_"+strconv.Itoa(i)+"Description",
++			Comments:    make([]*Comment,0),
++			Models:      make(map[string]*Model),
++		}
++		activity.Comments = comments
++		activity.Models = modelm
++		conf.Activities["activity_"+strconv.Itoa(i)]= activity
++	}
++
++	return conf
++}
++
++func (m *Conf)Print() {
++	data, _ := json.Marshal(m)
++	print(string(data))
++}
+\ No newline at end of file
+Index: templete/gos.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templete/gos.json b/templete/gos.json
+new file mode 100644
+--- /dev/null	(date 1634701623933)
++++ b/templete/gos.json	(date 1634701623933)
+@@ -0,0 +1,1016 @@
++{
++  "checkgo":"1.0",
++  "version":"v1.0.0",
++  "info":{
++    "description":"这是一个例子",
++    "version":"v1.0",
++    "title":"铜雀台规则生成"
++  },
++  "host":"127.0.0.1",
++  "activities":{
++    "activity_0":{
++      "description":"activity_0Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_1":{
++      "description":"activity_1Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_2":{
++      "description":"activity_2Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    },
++    "activity_3":{
++      "description":"activity_3Description",
++      "comments":[
++        {
++          "description":"commet_0Description",
++          "type":"table",
++          "api":{
++            "api0":{
++              "description":"api_0Description",
++              "url":"http://127.0.0.1/api/0",
++              "method":"POST",
++              "in":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_1Description",
++          "type":"query",
++          "api":{
++            "api1":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_2Description",
++          "type":"table",
++          "api":{
++            "api2":{
++              "description":"api_1Description",
++              "url":"http://127.0.0.1/api/1",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        },
++        {
++          "description":"commet_3Description",
++          "type":"query",
++          "api":{
++            "api3":{
++              "description":"api_2Description",
++              "url":"http://127.0.0.1/api/2",
++              "method":"POST",
++              "in":{
++                "description":"model_1Description",
++                "checker":"",
++                "required":[
++                  "Name1"
++                ],
++                "fields":[
++                  {
++                    "name":"Name1",
++                    "type":"Type1",
++                    "required":false,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "in_ref":"",
++              "out":{
++                "description":"model_0Description",
++                "checker":"",
++                "required":[
++                  "Name0"
++                ],
++                "fields":[
++                  {
++                    "name":"Name0",
++                    "type":"Type0",
++                    "required":true,
++                    "checker":"",
++                    "ref":""
++                  }
++                ]
++              },
++              "out_ref":""
++            }
++          }
++        }
++      ],
++      "models":{
++        "model_0":{
++          "description":"model_0Description",
++          "checker":"",
++          "required":[
++            "Name0"
++          ],
++          "fields":[
++            {
++              "name":"Name0",
++              "type":"Type0",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_1":{
++          "description":"model_1Description",
++          "checker":"",
++          "required":[
++            "Name1"
++          ],
++          "fields":[
++            {
++              "name":"Name1",
++              "type":"Type1",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_2":{
++          "description":"model_2Description",
++          "checker":"",
++          "required":[
++            "Name2"
++          ],
++          "fields":[
++            {
++              "name":"Name2",
++              "type":"Type2",
++              "required":true,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        },
++        "model_3":{
++          "description":"model_3Description",
++          "checker":"",
++          "required":[
++            "Name3"
++          ],
++          "fields":[
++            {
++              "name":"Name3",
++              "type":"Type3",
++              "required":false,
++              "checker":"",
++              "ref":""
++            }
++          ]
++        }
++      }
++    }
++  }
++}
+\ No newline at end of file
+Index: checker.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/checker.go b/checker.go
+new file mode 100644
+--- /dev/null	(date 1634722601052)
++++ b/checker.go	(date 1634722601052)
+@@ -0,0 +1,41 @@
++package main
++
++import (
++	"errors"
++	"sync"
++)
++
++var (
++	checker *Checker
++)
++
++func init() {
++	checker = &Checker{}
++}
++
++type Checker struct {
++	lock *sync.Mutex
++	jsonConf Conf
++}
++
++//GetChecker 获取校验器
++func GetChecker() *Checker{
++	return checker
++}
++
++
++//LoadConf 获取校验器
++//Conf conf 配置加载
++func (c *Checker)LoadConf(conf Conf) error {
++	c.lock.Lock()
++	defer c.lock.Unlock()
++	if c.jsonConf.Checkgo!=conf.Checkgo{
++		return errors.New("check go version is error")
++	}
++	c.jsonConf = conf
++	return nil
++}
++
++func (c *Checker)GetChecker(activityCode string,api string)  {
++
++}
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1634695048007)
++++ b/.idea/vcs.xml	(date 1634695048007)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
